@@ -49,9 +49,8 @@ namespace MvcRecords.Models
     public class LoginViewModel
     {
         [Required]
-        [Display(Name = "Adres e-mail")]
-        [EmailAddress]
-        public string Email { get; set; }
+        [Display(Name = "Login")]
+        public string UserName { get; set; }
 
         [Required]
         [DataType(DataType.Password)]
@@ -65,9 +64,17 @@ namespace MvcRecords.Models
     public class RegisterViewModel
     {
         [Required]
+        [Display(Name = "Rola")]
+        public string UserRoles { get; set; }
+
+        [Required]
         [EmailAddress]
-        [Display(Name = "Adres e-mail")]
+        [Display(Name = "Email")]
         public string Email { get; set; }
+
+        [Required]
+        [Display(Name = "Login")]
+        public string UserName { get; set; }
 
         [Required]
         [StringLength(100, ErrorMessage = "{0} musi zawierać co najmniej następującą liczbę znaków: {2}.", MinimumLength = 6)]

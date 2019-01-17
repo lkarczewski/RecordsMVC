@@ -29,5 +29,9 @@ namespace MvcRecords.Models
         {
             return new ApplicationDbContext();
         }
+
+        public System.Data.Entity.DbSet<MvcRecords.Models.Artist> Artists { get; set; }
+
+        public System.Data.Entity.DbSet<MvcRecords.Models.Album> Albums { get; set; }
     }
 }
