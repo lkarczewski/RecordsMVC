@@ -35,11 +35,6 @@ namespace MvcRecords.Models
         [DisplayName("Cena")]
         public decimal Price { get; set; }
 
-        //[Required(ErrorMessage = "Pole jest wymagane.")]
-        //[DataType(DataType.Text)]
-        //[StringLength(50)]
-        //public string SerialNumber { get; set; }
-
         [ForeignKey("Artist")]
         [DisplayName("Wykonawca")]
         public int ArtistId { get; set; }

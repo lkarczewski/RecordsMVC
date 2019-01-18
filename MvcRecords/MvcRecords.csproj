@@ -203,6 +203,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Helpers\OwnHelpers.cs" />
     <Compile Include="Migrations\201901170059585_InitialCreate.cs" />
     <Compile Include="Migrations\201901170059585_InitialCreate.Designer.cs">
       <DependentUpon>201901170059585_InitialCreate.cs</DependentUpon>
@@ -289,6 +290,8 @@
     <Content Include="Views\Albums\Details.cshtml" />
     <Content Include="Views\Albums\Edit.cshtml" />
     <Content Include="Views\Albums\Index.cshtml" />
+    <Content Include="Views\Artists\_partialIndex.cshtml" />
+    <Content Include="Views\Albums\_partialIndex.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

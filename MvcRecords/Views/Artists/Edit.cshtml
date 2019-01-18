@@ -1,4 +1,5 @@
 ﻿@model MvcRecords.Models.Artist
+@using MvcRecords.Helpers
 
 @{
     ViewBag.Title = "Edit";
@@ -35,7 +36,7 @@
 
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Save" class="btn btn-default" />
+                @OwnHelpers.Button("Save")
             </div>
         </div>
     </div>

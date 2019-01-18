@@ -15,6 +15,7 @@ namespace MvcRecords.Controllers
         private ApplicationDbContext db = new ApplicationDbContext();
 
         // GET: Albums
+        [Authorize(Roles = "Admin, User")]
         public ActionResult Index()
         {
             var albums = db.Albums.Include(a => a.Artist);
@@ -22,6 +23,7 @@ namespace MvcRecords.Controllers
         }
 
         // GET: Albums/Details/5
+        [Authorize(Roles = "Admin, User")]
         public ActionResult Details(int? id)
         {
             if (id == null)
@@ -37,6 +39,7 @@ namespace MvcRecords.Controllers
         }
 
         // GET: Albums/Create
+        [Authorize(Roles = "Admin")]
         public ActionResult Create()
         {
             ViewBag.ArtistId = new SelectList(db.Artists, "Id", "Name");
@@ -48,6 +51,7 @@ namespace MvcRecords.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Admin")]
         public ActionResult Create([Bind(Include = "Id,Title,ReleaseDate,Genre,Price,ArtistId")] Album album)
         {
             if (ModelState.IsValid)
@@ -62,6 +66,7 @@ namespace MvcRecords.Controllers
         }
 
         // GET: Albums/Edit/5
+        [Authorize(Roles = "Admin")]
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -82,6 +87,7 @@ namespace MvcRecords.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Admin")]
         public ActionResult Edit([Bind(Include = "Id,Title,ReleaseDate,Genre,Price,ArtistId")] Album album)
         {
             if (ModelState.IsValid)
@@ -95,6 +101,7 @@ namespace MvcRecords.Controllers
         }
 
         // GET: Albums/Delete/5
+        [Authorize(Roles = "Admin")]
         public ActionResult Delete(int? id)
         {
             if (id == null)
@@ -112,6 +119,7 @@ namespace MvcRecords.Controllers
         // POST: Albums/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Admin")]
         public ActionResult DeleteConfirmed(int id)
         {
             Album album = db.Albums.Find(id);

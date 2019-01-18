@@ -1,0 +1,26 @@
+﻿@model MvcRecords.Models.Album
+
+<tr>
+    <td>
+        @Html.DisplayFor(model => model.Artist.Name)
+    </td>
+    <td>
+        @Html.DisplayFor(model => model.Title)
+    </td>
+    <td>
+        @Html.DisplayFor(model => model.ReleaseDate)
+    </td>
+    <td>
+        @Html.DisplayFor(model => model.Genre)
+    </td>
+    <td>
+        @Html.DisplayFor(model => model.Price)
+    </td>
+    <td>
+        @if (ViewContext.HttpContext.User.IsInRole("Admin"))
+        {
+            @Html.ActionLink("Edytuj", "Edit", new { id = @Model.Id })
+            @Html.ActionLink("Usuń", "Delete", new { id = @Model.Id })
+        }
+        @Html.ActionLink("Szczegóły", "Details", new { id = @Model.Id })
+</tr>

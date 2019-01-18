@@ -15,6 +15,7 @@ namespace MvcRecords.Controllers
         private ApplicationDbContext db = new ApplicationDbContext();
 
         // GET: Artists
+        [Authorize(Roles = "Admin, User")]
         public ActionResult Index(string artistCountry, string searchString)
         {
             var CountryList = new List<string>();
@@ -43,6 +44,7 @@ namespace MvcRecords.Controllers
         }
 
         // GET: Artists/Details/5
+
         public ActionResult Details(int? id)
         {
             if (id == null)
@@ -58,6 +60,7 @@ namespace MvcRecords.Controllers
         }
 
         // GET: Artists/Create
+        [Authorize(Roles = "Admin")]
         public ActionResult Create()
         {
             return View();
@@ -81,6 +84,7 @@ namespace MvcRecords.Controllers
         }
 
         // GET: Artists/Edit/5
+        [Authorize(Roles = "Admin")]
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -100,6 +104,7 @@ namespace MvcRecords.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Admin")]
         public ActionResult Edit([Bind(Include = "Id,Name,Country")] Artist artist)
         {
             if (ModelState.IsValid)
@@ -112,6 +117,7 @@ namespace MvcRecords.Controllers
         }
 
         // GET: Artists/Delete/5
+        [Authorize(Roles = "Admin")]
         public ActionResult Delete(int? id)
         {
             if (id == null)
@@ -127,6 +133,7 @@ namespace MvcRecords.Controllers
         }
 
         // POST: Artists/Delete/5
+        [Authorize(Roles = "Admin")]
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)

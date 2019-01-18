@@ -1,4 +1,5 @@
 ﻿@model MvcRecords.Models.Artist
+@using MvcRecords.Helpers
 
 @{
     ViewBag.Title = "Delete";
@@ -32,9 +33,9 @@
     @using (Html.BeginForm()) {
         @Html.AntiForgeryToken()
 
-        <div class="form-actions no-color">
-            <input type="submit" value="Delete" class="btn btn-default" /> |
-            @Html.ActionLink("Back to List", "Index")
-        </div>
+    <div class="form-actions no-color">
+        @OwnHelpers.Button("Delete")|
+        @Html.ActionLink("Wróć do listy", "Index")
+    </div>
     }
 </div>

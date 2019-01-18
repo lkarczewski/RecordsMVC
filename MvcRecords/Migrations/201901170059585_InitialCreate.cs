@@ -12,7 +12,7 @@ namespace MvcRecords.Migrations
                 c => new
                     {
                         Id = c.Int(nullable: false, identity: true),
-                        Name = c.Int(nullable: false),
+                        Name = c.String(nullable: false),
                         Country = c.String(nullable: false),
                     })
                 .PrimaryKey(t => t.Id);
