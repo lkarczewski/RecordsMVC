@@ -19,6 +19,7 @@ namespace MvcRecords.Models
         public string Title { get; set; }
 
         [DataType(DataType.Date)]
+        [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}")]
         [DisplayName("Data wydania")]
         [Required]
         public DateTime ReleaseDate { get; set; }
@@ -36,7 +37,6 @@ namespace MvcRecords.Models
         public decimal Price { get; set; }
 
         [ForeignKey("Artist")]
-        [DisplayName("Wykonawca")]
         public int ArtistId { get; set; }
 
         public virtual Artist Artist { get; set; }

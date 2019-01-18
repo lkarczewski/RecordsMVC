@@ -222,6 +222,11 @@
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content2\bootstrap-theme.css" />
+    <Content Include="Content2\bootstrap-theme.min.css" />
+    <Content Include="Content2\bootstrap.css" />
+    <Content Include="Content2\bootstrap.min.css" />
+    <Content Include="Content2\Site.css" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
@@ -235,6 +240,11 @@
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="Content2\bootstrap-theme.css.map" />
+    <Content Include="Content2\bootstrap-theme.min.css.map" />
+    <Content Include="Content2\bootstrap.css.map" />
+    <Content Include="Content2\bootstrap.min.css.map" />
+    <None Include="Properties\PublishProfiles\MyRecords18012019 - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
@@ -292,6 +302,7 @@
     <Content Include="Views\Albums\Index.cshtml" />
     <Content Include="Views\Artists\_partialIndex.cshtml" />
     <Content Include="Views\Albums\_partialIndex.cshtml" />
+    <Content Include="Views\Shared\_Layout2.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
